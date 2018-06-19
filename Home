@@ -1,1 +1,11 @@
 
+Profile prof = new Profile();
+
+                if (ProfileDetails != null)
+                {
+                    prof.FirstName = ProfileDetails.FirstName != null ? ProfileDetails.FirstName : string.Empty;
+                    Session["FirstName"] = ProfileDetails.FirstName;
+                    prof.LastName = ProfileDetails.LastName != null ? ProfileDetails.LastName : string.Empty;
+                    prof.Email = ProfileDetails.Email != null ? ProfileDetails.Email : string.Empty;
+                    prof.GDPRChatAccepted = ProfileDetails.GDPRChat != null ? ProfileDetails.GDPRChat : false;
+                }
