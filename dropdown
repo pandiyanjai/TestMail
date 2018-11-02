@@ -1,0 +1,6 @@
+   var fileName = Path.GetFileName(file.FileName);
+                        var path = Path.Combine(Server.MapPath("~/Images/ProfilePictures"), Session["UserId"].ToString() + "." + Path.GetExtension(file.FileName));
+                        file.SaveAs(path);
+
+                        // prepare a relative path to be stored in the database and used to display later on.
+                        path = Url.Content(Path.Combine("~/Images", fileName))
