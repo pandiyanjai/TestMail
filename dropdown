@@ -4,3 +4,21 @@
 
                         // prepare a relative path to be stored in the database and used to display later on.
                         path = Url.Content(Path.Combine("~/Images", fileName))
+  public List<SelectListItem> userrole()
+        {
+
+            List<UserRole> usr = (obj.UserRole(Convert.ToInt32(Session["UserId"])).userrole).ToList();
+            List<SelectListItem> userrolelist = new List<SelectListItem>();
+            for (int i = 0; i < usr.Count; i++)
+            {
+
+                userrolelist.Add(new SelectListItem { Text = usr[i].userRole, Value = usr[i].roleID.ToString() });
+
+            }
+
+
+
+            return userrolelist;
+
+
+        }
